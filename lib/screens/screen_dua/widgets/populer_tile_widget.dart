@@ -1,4 +1,5 @@
 import 'package:aspen_travel_app_ui/models/populer.dart';
+import 'package:aspen_travel_app_ui/screens/screen_tiga/screen_tiga.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,6 +29,10 @@ class _PopulerTileWidgetState extends State<PopulerTileWidget> {
 
               return GestureDetector(
                 onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScreenTiga(populer)));
                   setState(() {
                     selectedIndex = index;
                   });
@@ -44,16 +49,6 @@ class _PopulerTileWidgetState extends State<PopulerTileWidget> {
                       borderRadius: const BorderRadius.all(
                         Radius.circular(24),
                       ),
-                      boxShadow: selectedIndex == index
-                          ? [
-                              BoxShadow(
-                                  color:
-                                      const Color(0xff186FF3).withOpacity(.2),
-                                  offset: const Offset(9, 0),
-                                  blurRadius: 10.0,
-                                  spreadRadius: 1),
-                            ]
-                          : null,
                       image: DecorationImage(
                         image: AssetImage(
                           populer.imagePath,

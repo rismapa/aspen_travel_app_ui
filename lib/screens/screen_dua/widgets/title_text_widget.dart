@@ -14,7 +14,7 @@ class TitleTextWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         left: 20,
-        top: 32,
+        top: 30,
       ),
       child: Text(
         titleTxt,

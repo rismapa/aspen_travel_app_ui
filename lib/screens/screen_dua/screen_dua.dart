@@ -1,6 +1,8 @@
+import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/bottom_navbar.dart';
 import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/category_widget.dart';
 import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/header.dart';
 import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/populer_tile_widget.dart';
+import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/recommended_tile_widget.dart';
 import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/search_widget.dart';
 import 'package:aspen_travel_app_ui/screens/screen_dua/widgets/title_text_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,22 +14,27 @@ class ScreenDua extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeaderWidget(),
-            const SearchWidget(),
-            const CategoryWidget(),
-            const TitleTextWidget(
+            HeaderWidget(),
+            SearchWidget(),
+            CategoryWidget(),
+            TitleTextWidget(
               titleTxt: "Popular",
             ),
-            const PopulerTileWidget(),
+            PopulerTileWidget(),
+            TitleTextWidget(
+              titleTxt: "Recommended",
+            ),
+            RecommendedTile(),
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavbar(),
     );
   }
 }

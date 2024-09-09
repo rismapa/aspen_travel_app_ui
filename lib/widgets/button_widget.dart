@@ -4,17 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({
-    super.key,
-  });
+  final String txtButton;
+  final double widthButton;
+
+  const ButtonWidget(
+      {super.key, required this.txtButton, required this.widthButton});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 52,
-      width: double.infinity,
+      width: widthButton,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
             color: const Color(0xff1C18F2).withOpacity(.08),
@@ -30,10 +31,11 @@ class ButtonWidget extends StatelessWidget {
             ));
           },
           style: TextButton.styleFrom(
-            backgroundColor: kPrimaryColor,
-          ),
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16))),
           child: Text(
-            "Explore",
+            txtButton,
             style: GoogleFonts.montserrat(
                 fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
           )),

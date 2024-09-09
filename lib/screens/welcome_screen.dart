@@ -72,7 +72,10 @@ class WelcomeScreen extends StatelessWidget {
                       ),
 
                       // widget button
-                      const ButtonWidget()
+                      const ButtonWidget(
+                        txtButton: "Explore",
+                        widthButton: double.infinity,
+                      )
                     ],
                   ),
                 ],
